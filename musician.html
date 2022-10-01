@@ -19,13 +19,35 @@
 
         <input type="button" onclick="checkGuess()" value="Submit">
     </form>
-
+    <br>
+    <div class="container">
+        <img src="Lacewing.jpg" height="100px" width="100px" alt="grasshopper" id="image" onclick="swapImage()">
+    </div>
 
     <p id="result"></p>
 
     <script>
         correct = 0;
         wrong = 0;
+        var useImage = 1;
+
+        function swapImage() {
+            switch (useImage) {
+                case 1:
+                    document.getElementById("image").src = "LeafInsect.jpg";
+                    useImage = 2;
+                    break;
+                case 2:
+                    document.getElementById("image").src = "Lacewing.jpg"
+                    useImage = 3;
+                    break;
+                case 3:
+                    document.getElementById("image").src = "Earwig.jpg"
+                    useImage = 1;
+                    break;
+
+            }
+        }
 
         function checkGuess() {
             console.log("Getting form values")
