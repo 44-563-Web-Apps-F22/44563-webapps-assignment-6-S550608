@@ -66,6 +66,32 @@
                 alert("Wrong Musician");
             }
         }
+
+        function endGame() {
+            password = document.getElementById("element1").value
+            guess = document.getElementById("element2").value
+            if (password == guess) {
+                if (wrong >= 3) {
+                    alert("Sorry, game over.")
+                }
+                else {
+                    correct++
+                    alert("You got it right")
+                    document.getElementById("result").innerHTML = "Correct count:" + correct + " " + "Wrong count:" + wrong
+                }
+            }
+            else {
+                if (wrong >= 3) {
+                    alert("Sorry, game over.")
+                }
+                else {
+                    wrong++
+                    alert("Wrong Musician")
+                    document.getElementById("result").innerHTML = "Correct count:" + correct + " " + "Wrong count:" + wrong
+                }
+
+            }
+        }
     </script>
 
 </body>
