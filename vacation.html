@@ -23,22 +23,22 @@
 
         <div class="container">
             <form>
-                <input type="checkbox" id="air" name="vacation" value="true">
+                <input type="checkbox" id="Air" name="vacation" value="true">
                 <label for="air">Travel by Air</label> <br>
-                <input type="checkbox" id="domestic" name="vacation" value="true">
+                <input type="checkbox" id="Domestic" name="vacation" value="true">
                 <label for="domestic">Domestic</label> <br>
-                <input type="checkbox" id="resort" name="vacation" value="false">
+                <input type="checkbox" id="Resort" name="vacation" value="false">
                 <label for="resort">Resort</label> <br>
                 <br>
                 <input type="button" class="btn btn-warning" value="Select a vacation" onclick="selectVacation()">
             </form>
             <br>
             <form>
-                <label for="city">Enter a city</label>
-                <input type="text" id="city" name="city" value="city"> <br>
+                <label for="City">Enter a city</label>
+                <input type="text" id="City" name="City" value="City"> <br>
                 <br>
-                <label for="city">Enter price</label>
-                <input type="text" id="price" name="price"> <br>
+                <label for="Price">Enter price</label>
+                <input type="text" id="Price" name="Price"> <br>
                 <br>
                 <input type="button" class="btn btn-danger" value="Update the vacation" onclick="updateVacation()"><br>
                 <br>
@@ -51,34 +51,34 @@
         var my_vacation = {};
         function selectVacation() {
             my_vacation = {};
-            let airtravel = document.getElementById("air").checked
-            let domestictravel = document.getElementById("domestic").checked
-            let resorttravel = document.getElementById("resort").checked
+            let airtravel = document.getElementById("Air").checked
+            let domestictravel = document.getElementById("Domestic").checked
+            let resorttravel = document.getElementById("Resort").checked
             if (airtravel) {
-                my_vacation.air = true;
+                my_vacation.Air = true;
             }
             else {
-                my_vacation.air = false;
+                my_vacation.Air = false;
             }
             if (domestictravel) {
-                my_vacation.domestic = true;
+                my_vacation.Domestic = true;
             }
             else {
-                my_vacation.domestic = false;
+                my_vacation.Domestic = false;
             }
             if (resorttravel) {
-                my_vacation.resort = true;
+                my_vacation.Resort = true;
             }
             else {
-                my_vacation.resort = false;
+                my_vacation.Resort = false;
             }
             document.getElementById("result").innerHTML = JSON.stringify(my_vacation)
         }
         function updateVacation() {
-            let city = document.getElementById("city").value;
-            let price = document.getElementById("price").value;
-            my_vacation["city"] = city;
-            my_vacation["price"] = price;
+            let City = document.getElementById("City").value;
+            let Price = document.getElementById("Price").value;
+            my_vacation["City"] = City;
+            my_vacation["Price"] = Price;
             document.getElementById("result").innerHTML = JSON.stringify(my_vacation)
         }
     </script>
