@@ -29,7 +29,7 @@
             <input type="text" id="guess" name="form1_nick" autofocus> <br>
             <br>
 
-            <input type="button" class="btn btn-primary" onclick="checkGuess()" value="Submit"><br>
+            <input type="button" class="btn btn-primary" onclick="checkGuess();endGame()" value="Submit"><br>
             <br>
             <p id="result">This text will be replaced</p>
         </form>
@@ -70,6 +70,19 @@
                 result.innerHTML = "correct : " + correct + " , " + " wrong : " + wrong;
                 alert("Wrong Musician");
             }
+        }
+        function endGame(){
+
+        while (wrong > 3) {
+            if(wrong>=3){
+                wrong-=5
+                alert("Sorry, game over.")
+            }
+            else{
+                document.getElementById("result").innerHTML = "correct : " + correct + " , " + " wrong : " + wrong
+            }    
+        }
+
         }
     </script>
 </body>
